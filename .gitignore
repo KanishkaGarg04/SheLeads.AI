@@ -1,0 +1,6 @@
+.env
+.env.*
+frontend/.env
+backend/.env
+shealeads-backend/node_modules/
+shealeads-frontend/node_modules/
