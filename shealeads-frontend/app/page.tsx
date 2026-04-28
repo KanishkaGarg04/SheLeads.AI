@@ -25,14 +25,14 @@ export default function SheaLeads() {
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
   const [trending, setTrending] = useState<any[]>([]);
 
-  const API_BASE = 'http://localhost:5000';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [trendRes, tipRes] = await Promise.all([
-          axios.get(`${API_BASE}/api/trending`),
-          axios.get(`${API_BASE}/api/tips`)
+          axios.get(`${API_URL}/api/trending`),
+          axios.get(`${API_URL}/api/tips`)
         ]);
         setTrending(trendRes.data || []);
         setTips(tipRes.data || []);
@@ -73,7 +73,7 @@ export default function SheaLeads() {
     formData.append('image', file);
 
     try {
-      const res = await axios.post(`${API_BASE}/api/scan`, formData, {
+      const res = await axios.post(`${API_URL}/api/scan`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
         timeout: 45000,
       });
