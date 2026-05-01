@@ -25,7 +25,7 @@ export default function SheaLeads() {
   const [currentTipIndex, setCurrentTipIndex] = useState(0);
   const [trending, setTrending] = useState<any[]>([]);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = "https://sheleads-ai.onrender.com";
 
   useEffect(() => {
     const fetchData = async () => {

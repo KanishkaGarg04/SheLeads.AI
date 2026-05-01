@@ -11,7 +11,11 @@ const PORT = process.env.PORT || 5000;
 
 // CORS
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000' , 'https://she-leads-33mq3oine-kanishkagarg04s-projects.vercel.app/'],
+  origin: [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://she-leads-33mq3oine-kanishkagarg04s-projects.vercel.app'
+  ],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
